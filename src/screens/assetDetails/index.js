@@ -1,5 +1,5 @@
 import React from 'react'
-import { getRequest, getImageUrlByType } from '../../utils'
+import { getRequest, getAssetUrlByType } from '../../utils'
 
 
 const getItemMatchingNasaId = (nasaId, items) => items.filter(item => item.data[0].nasa_id === nasaId)[0]
@@ -54,12 +54,12 @@ class AssetDetails extends React.Component {
           <h3>NASA ID: {this.props.match.params.id}</h3>
           <strong>Click the asset to download the original asset</strong>
           {this.state.mediaType === 'audio' &&
-            <div><a href={getImageUrlByType('128k.mp3', this.state.assets)}>Audio Link</a></div>
+            <div><a href={getAssetUrlByType('128k.mp3', this.state.assets)}>Audio Link</a></div>
           }
           <p>{this.state.description}</p>
           {this.state.mediaType === 'image' &&
-            <a href={getImageUrlByType('orig', this.state.assets)}>
-              <img src={getImageUrlByType('small', this.state.assets)} alt="nasa" />
+            <a href={getAssetUrlByType('orig', this.state.assets)}>
+              <img src={getAssetUrlByType('small', this.state.assets)} alt="nasa" />
             </a>
           }
         </div>

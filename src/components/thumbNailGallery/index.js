@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
-import { getImageUrlByType } from '../../utils'
+import { getAssetUrlByType } from '../../utils'
 
 
 const ThumbNail = ({ data }) => {
@@ -11,7 +11,7 @@ const ThumbNail = ({ data }) => {
       <div className="thumbnail_gallery__image">
         {mediaType === 'image' &&
           <Link to={`/${data.data[0].nasa_id}`}>
-            <img src={getImageUrlByType('thumb', data.links)} alt="nasa thumbnail" />
+            <img src={getAssetUrlByType('thumb', data.links)} alt="nasa thumbnail" />
           </Link>
         }
         {mediaType === 'audio' &&

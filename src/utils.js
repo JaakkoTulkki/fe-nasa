@@ -10,7 +10,7 @@ export const getRequest = async url => fetch(url)
     console.log(response); // eslint-disable-line
   })
 
-export function getImageUrlByType(imageType, arrayOfUrls) {
+export function getAssetUrlByType(imageType, arrayOfUrls) {
   for (const urlObj of arrayOfUrls) {
     const url = urlObj.href
     if (url.indexOf(imageType) > -1) {
