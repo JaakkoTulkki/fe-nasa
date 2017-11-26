@@ -6,7 +6,7 @@ import './scss/main.scss'
 import Home from './screens/home'
 import AssetDetails from './screens/assetDetails'
 
-const Container = () => (
+const App = () => (
   <div>
     <nav>
       <Link to="/">Home</Link>
@@ -22,5 +22,5 @@ const Container = () => (
 
 ReactDOM.render(
   <BrowserRouter>
-    <Container/>
+    <App/>
   </BrowserRouter>, document.getElementById('root'))
