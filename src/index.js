@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { BrowserRouter, Link, Route, Switch } from 'react-router-dom'
+import { HashRouter, Link, Route, Switch } from 'react-router-dom'
 import './scss/main.scss'
 
 import Home from './screens/home'
@@ -20,4 +20,4 @@ const App = () => (
   </div>
 )
 
-ReactDOM.render(<BrowserRouter><App /></BrowserRouter>, document.getElementById('root'))
+ReactDOM.render(<HashRouter><App /></HashRouter>, document.getElementById('root'))

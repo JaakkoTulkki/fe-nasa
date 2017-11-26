@@ -73,3 +73,12 @@ a {
     float: right;
   }
 }
+
+.asset_details {
+  a {
+    text-decoration: underline;
+    &:hover {
+      color: #8a2be2;
+    }
+  }
+}

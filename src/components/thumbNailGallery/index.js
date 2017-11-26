@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import { getAssetUrlByType } from '../../utils'
 
+import MicroPhone from '../svg/microphone'
+
 
 const ThumbNail = ({ data }) => {
   const mediaType = data.data[0].media_type
@@ -15,7 +17,7 @@ const ThumbNail = ({ data }) => {
           </Link>
         }
         {mediaType === 'audio' &&
-          <Link to={`/${data.data[0].nasa_id}`}>Audio</Link>
+          <Link to={`/${data.data[0].nasa_id}`}><MicroPhone /></Link>
         }
       </div>)
   }
