@@ -48,7 +48,7 @@ class AssetDetails extends React.Component {
 
   render() {
     return (
-      <div class="asset_details">
+      <div className="asset_details">
         {this.state.loading &&
           <div>Loading...</div>
         }
