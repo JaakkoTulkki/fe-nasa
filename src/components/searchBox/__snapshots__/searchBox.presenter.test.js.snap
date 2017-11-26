@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchBox renders 1`] = `
+<div
+  className="search_box"
+>
+  <h2>
+    search title
+  </h2>
+  <div>
+    <form>
+      <input
+        name="q"
+        placeholder="Search...."
+        type="text"
+        value="space chicken"
+      />
+      <input
+        onClick={[Function]}
+        type="submit"
+        value="Search"
+      />
+      <br />
+      <input
+        checked={true}
+        name="image"
+        onChange={[Function]}
+        type="checkbox"
+      />
+      Image
+      <input
+        checked={false}
+        name="audio"
+        onChange={[Function]}
+        type="checkbox"
+      />
+      Audio
+    </form>
+    <p
+      className="search_box__error_message"
+    >
+      something went wrong....
+    </p>
+  </div>
+</div>
+`;
