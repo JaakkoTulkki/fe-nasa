@@ -8,12 +8,12 @@ const Previous = ({ link, callBack }) => (link ? <a className="prev" href="#" on
 const Next = ({ link, callBack }) => (link ? <a className="next" href="#" onClick={() => callBack(link.href)}>Next&#8594;</a> : null)
 
 Previous.propTypes = {
-  link: PropTypes.string,
+  link: PropTypes.object,
   callBack: PropTypes.func,
 }
 
 Next.propTypes = {
-  link: PropTypes.string,
+  link: PropTypes.object,
   callBack: PropTypes.func,
 }
 
