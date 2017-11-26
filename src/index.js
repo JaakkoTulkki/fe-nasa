@@ -9,7 +9,7 @@ import AssetDetails from './screens/assetDetails'
 const App = () => (
   <div>
     <nav>
-      <Link to="/">Home</Link>
+      <Link to="/">NASA SEARCH</Link>
     </nav>
     <div id="container">
       <Switch>

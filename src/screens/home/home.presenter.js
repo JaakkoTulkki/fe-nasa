@@ -15,7 +15,7 @@ const HomePresenter = ({
 }) => (
   <div>
     <SearchBox
-      title="NASA Search"
+      title=""
       submit={submit}
       loading={loading}
       errorMessage={errorMessage}
