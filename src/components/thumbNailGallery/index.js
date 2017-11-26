@@ -22,6 +22,10 @@ const ThumbNail = ({ data }) => {
   return null
 }
 
+ThumbNail.propTypes = {
+  data: PropTypes.object,
+}
+
 const ThumbNailGallery = ({ thumbNails = [] }) => (
   <div className="thumbnail_gallery">
     {thumbNails.map(thumbNail => <ThumbNail key={`${thumbNail.href}`} data={thumbNail} />)}

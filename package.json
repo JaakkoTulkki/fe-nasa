@@ -21,7 +21,8 @@
   },
   "scripts": {
     "start": "webpack-dev-server --open",
-    "test": "jest"
+    "test": "jest",
+    "eslint": "eslint ./src"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

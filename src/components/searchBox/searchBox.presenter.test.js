@@ -1,13 +1,11 @@
-import { configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-
-configure({ adapter: new Adapter() });
-
+import { configure, shallow, mount } from 'enzyme'
+import Adapter from 'enzyme-adapter-react-16'
 import React from 'react'
-import { shallow, mount } from 'enzyme'
 import toJson from 'enzyme-to-json'
 
 import SearchBox from './searchBox.presenter'
+
+configure({ adapter: new Adapter() })
 
 test('SearchBox renders', () => {
   const wrapper = shallow(<SearchBox
@@ -27,7 +25,7 @@ test('Ticking audio calls cb correctly', () => {
   />)
 
   wrapper.find('[name="audio"]').at(0).simulate('change')
-  expect(cb).toHaveBeenCalledWith('audio', expect.objectContaining({type: 'change'}))
+  expect(cb).toHaveBeenCalledWith('audio', expect.objectContaining({ type: 'change' }))
 })
 
 test('Ticking image calls cb correctly', () => {
@@ -37,7 +35,7 @@ test('Ticking image calls cb correctly', () => {
   />)
 
   wrapper.find('[name="image"]').at(0).simulate('change')
-  expect(cb).toHaveBeenCalledWith('image', expect.objectContaining({type: 'change'}))
+  expect(cb).toHaveBeenCalledWith('image', expect.objectContaining({ type: 'change' }))
 })
 
 test('clicking submit calls cb correctly', () => {
@@ -56,6 +54,6 @@ test('entering text to searchbox calls cb correctly', () => {
     setValue={cb}
   />)
 
-  wrapper.find('[type="text"]').at(0).simulate('change', {target: {value: 'space man'}})
-  expect(cb).toHaveBeenCalledWith(expect.objectContaining({target: {value: 'space man'}}))
+  wrapper.find('[type="text"]').at(0).simulate('change', { target: { value: 'space man' } })
+  expect(cb).toHaveBeenCalledWith(expect.objectContaining({ target: { value: 'space man' } }))
 })

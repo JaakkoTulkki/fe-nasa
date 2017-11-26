@@ -21,7 +21,7 @@ export default class SearchBox extends React.Component {
   }
 
   setTick(name, e) {
-    this.setState({[name]: e.target.checked })
+    this.setState({ [name]: e.target.checked })
   }
 
   submit(e) {
@@ -34,7 +34,7 @@ export default class SearchBox extends React.Component {
   }
 
   render() {
-    return <SearchBoxPresenter
+    return (<SearchBoxPresenter
       loading={this.props.loading}
       title={this.props.title}
       errorMessage={this.props.errorMessage}
@@ -44,7 +44,7 @@ export default class SearchBox extends React.Component {
       submit={this.submit}
       image={this.state.image}
       audio={this.state.audio}
-    />
+    />)
   }
 }
 

@@ -3,12 +3,18 @@ import PropTypes from 'prop-types'
 
 const getLink = (rel, links) => links.filter(link => link.rel === rel)[0]
 
-const Previous = ({ link, callBack }) => {
-  return link ? <a className="prev" href="#" onClick={() => callBack(link.href)}>&#8592;Previous</a> : null
+const Previous = ({ link, callBack }) => (link ? <a className="prev" href="#" onClick={() => callBack(link.href)}>&#8592;Previous</a> : null)
+
+const Next = ({ link, callBack }) => (link ? <a className="next" href="#" onClick={() => callBack(link.href)}>Next&#8594;</a> : null)
+
+Previous.propTypes = {
+  link: PropTypes.string,
+  callBack: PropTypes.func,
 }
 
-const Next = ({ link, callBack }) => {
-  return link ? <a className="next" href="#" onClick={() => callBack(link.href)}>Next&#8594;</a> : null
+Next.propTypes = {
+  link: PropTypes.string,
+  callBack: PropTypes.func,
 }
 
 const Pagination = ({ links = [], callBack }) => (
