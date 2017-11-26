@@ -11,14 +11,24 @@ export default class SearchBox extends React.Component {
     }
     this.setValue = this.setValue.bind(this)
     this.setTick = this.setTick.bind(this)
+    this.submit = this.submit.bind(this)
   }
 
   setValue(e) {
-    this.setState({searchTerm: e.target.value})
+    this.setState({ searchTerm: e.target.value })
   }
 
   setTick(name, e) {
-    this.setState({[name]: e.target.checked})
+    this.setState({ [name]: e.target.checked })
+  }
+
+  submit(e) {
+    e.preventDefault()
+    this.props.submit({
+      q: this.state.searchTerm,
+      audio: this.state.audio,
+      image: this.state.image,
+    })
   }
 
   render() {
@@ -31,15 +41,22 @@ export default class SearchBox extends React.Component {
         {!this.props.loading &&
           <div>
             <form>
-              <input type="text" name="q" placeholder="Search...." value={this.state.searchTerm} onChange={this.setValue}/>
-              <input type="submit" value="Search" onClick={(e) => {
-                e.preventDefault()
-                this.props.submit({q: this.state.searchTerm, audio: this.state.audio, image: this.state.image})
-              }}/>
-              <br/>
-              <input type="checkbox" name="image" checked={this.state.image} onChange={e => this.setTick('image', e)}/>
+              <input
+                type="text"
+                name="q"
+                placeholder="Search...."
+                value={this.state.searchTerm}
+                onChange={this.setValue}
+              />
+              <input
+                type="submit"
+                value="Search"
+                onClick={e => this.submit(e)}
+              />
+              <br />
+              <input type="checkbox" name="image" checked={this.state.image} onChange={e => this.setTick('image', e)} />
               Image
-              <input type="checkbox" name="audio" checked={this.state.audio} onChange={e => this.setTick('audio', e)}/>
+              <input type="checkbox" name="audio" checked={this.state.audio} onChange={e => this.setTick('audio', e)} />
               Audio
             </form>
             <p className="search_box__error_message">{this.props.errorMessage}</p>

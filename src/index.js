@@ -13,14 +13,11 @@ const App = () => (
     </nav>
     <div id="container">
       <Switch>
-        <Route exact path="/" component={Home}/>
-        <Route path="/:id" component={AssetDetails}/>
+        <Route exact path="/" component={Home} />
+        <Route path="/:id" component={AssetDetails} />
       </Switch>
     </div>
   </div>
 )
 
-ReactDOM.render(
-  <BrowserRouter>
-    <App/>
-  </BrowserRouter>, document.getElementById('root'))
+ReactDOM.render(<BrowserRouter><App /></BrowserRouter>, document.getElementById('root'))

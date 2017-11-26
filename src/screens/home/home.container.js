@@ -1,12 +1,12 @@
 import React from 'react'
 
 import HomePresenter from './home.presenter'
-import {getRequest} from "../../utils";
+import { getRequest } from '../../utils'
 
 
-const constructUrl = ({q, image=false, audio=false}) => {
+const constructUrl = ({ q, image = false, audio = false }) => {
   let url = `https://images-api.nasa.gov/search?q=${q}`
-  let mediaTypes = []
+  const mediaTypes = []
   if (image) {
     mediaTypes.push('image')
   }
@@ -39,22 +39,22 @@ export default class HomeContainer extends React.Component {
   }
 
   async requestAssets(url) {
-    this.setState({loading: true})
+    this.setState({ loading: true })
     const response = await getRequest(url)
 
-    this.setState({loading: false})
-    this.setState({thumbNails: response.collection.items})
-    this.setState({links: response.collection.links})
+    this.setState({ loading: false })
+    this.setState({ thumbNails: response.collection.items })
+    this.setState({ links: response.collection.links })
   }
 
   render() {
-    return <HomePresenter
+    return (<HomePresenter
       submit={this.submitForm}
       loading={this.state.loading}
       errorMessage={this.state.errorMessage}
       thumbNails={this.state.thumbNails}
       paginationCallBack={this.requestAssets}
       paginationLinks={this.state.links}
-    />
+    />)
   }
 }
