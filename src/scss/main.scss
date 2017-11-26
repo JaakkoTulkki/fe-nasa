@@ -1,0 +1,78 @@
+body {
+  font-size: 12px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link {
+    color: black;
+}
+
+/* visited link */
+a:visited {
+    color: black;
+}
+
+/* mouse over link */
+a:hover {
+    color: black;
+}
+
+/* selected link */
+a:active {
+    color: black;
+}
+
+#container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.search_box {
+  text-align: center;
+}
+
+.search_box__error_message {
+  color: red;
+}
+
+.thumbnail_gallery {
+  height: 500px;
+  overflow-y: scroll;
+}
+
+.thumbnail_gallery__image {
+  display: inline-block;
+  width: 140px;
+  height: 140px;
+  margin: 5px;
+  position: relative;
+}
+
+.thumbnail_gallery img{
+  object-fit: contain;
+  height: 100%;
+  width: 100%;
+}
+
+.pagination {
+  height: 50px;
+  text-align: center;
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+.pagination .prev {
+  float: left;
+}
+
+.pagination .next {
+  float: right;
+}
+
+.pagination a {
+  font-size: 1.2rem;
+}
+
