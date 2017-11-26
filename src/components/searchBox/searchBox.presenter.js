@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 
 
 const SearchBox = ({ loading, title, errorMessage, searchTerm, setValue, submit, setTick, image, audio }) => {
-  // const { loading, title, errorMessage, searchTerm, setValue, submit, setTick, image, audio } = props
   return <div className="search_box">
         <h2>{title}</h2>
         {loading &&

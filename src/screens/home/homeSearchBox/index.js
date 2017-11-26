@@ -21,7 +21,7 @@ export default class SearchBox extends React.Component {
   }
 
   setTick(name, e) {
-    this.setState({ [name]: e.target.checked })
+    this.setState({[name]: e.target.checked })
   }
 
   submit(e) {
