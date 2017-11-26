@@ -3,7 +3,7 @@
 exports[`Home renders 1`] = `
 <div>
   <SearchBox
-    title="NASA Search"
+    title=""
   />
   <ThumbNailGallery />
   <Pagination />
