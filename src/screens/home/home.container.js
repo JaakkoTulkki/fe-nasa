@@ -3,6 +3,23 @@ import React from 'react'
 import HomePresenter from './home.presenter'
 import {getRequest} from "../../utils";
 
+
+const constructUrl = ({q, image=false, audio=false}) => {
+  let url = `https://images-api.nasa.gov/search?q=${q}`
+  let mediaTypes = []
+  if (image) {
+    mediaTypes.push('image')
+  }
+  if (audio) {
+    mediaTypes.push('audio')
+  }
+  if (mediaTypes.length > 0) {
+    url += '&media_type='
+    url += mediaTypes.join(',')
+  }
+  return url
+}
+
 export default class HomeContainer extends React.Component {
   constructor(props) {
     super(props)
@@ -16,20 +33,8 @@ export default class HomeContainer extends React.Component {
     }
   }
 
-  async submitForm({q, image=false, audio=false}) {
-    let url = `https://images-api.nasa.gov/search?q=${q}`
-    let mediaTypes = []
-    if (image) {
-      mediaTypes.push('image')
-    }
-    if (audio) {
-      mediaTypes.push('audio')
-    }
-    if (mediaTypes.length > 0) {
-      url += '&media_type='
-      url += mediaTypes.join(',')
-    }
-
+  async submitForm(searchParams) {
+    const url = constructUrl(searchParams)
     await this.requestAssets(url)
   }
 
