@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import SearchBoxPresenter from './searchBox.presenter'
+import SearchBoxPresenter from '../../../components/searchBox'
 
 export default class SearchBox extends React.Component {
   constructor(props) {
@@ -53,5 +53,4 @@ SearchBox.propTypes = {
   submit: PropTypes.func.isRequired,
   loading: PropTypes.bool,
   errorMessage: PropTypes.string,
-
 }

@@ -1,3 +1,3 @@
-import SearchBox from './searchBox.container'
+import SearchBox from './searchBox.presenter'
 
 export default SearchBox

@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import SearchBox from './../../components/searchBox'
+import SearchBox from './homeSearchBox'
 import ThumbNailGallery from './../../components/thumbNailGallery'
 import Pagination from './../../components/pagination'
 
