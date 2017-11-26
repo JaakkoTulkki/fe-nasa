@@ -4,25 +4,17 @@ body {
 
 a {
   text-decoration: none;
-}
-
-a:link {
+  &:visited {
     color: black;
-}
+  }
 
-/* visited link */
-a:visited {
+  &:hover {
     color: black;
-}
+  }
 
-/* mouse over link */
-a:hover {
+  &:active {
     color: black;
-}
-
-/* selected link */
-a:active {
-    color: black;
+  }
 }
 
 #container {
@@ -49,29 +41,25 @@ a:active {
   height: 140px;
   margin: 5px;
   position: relative;
-}
 
-.thumbnail_gallery img{
-  object-fit: contain;
-  height: 100%;
-  width: 100%;
+  img {
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+  }
 }
 
 .pagination {
   height: 50px;
   max-width: 200px;
   margin: 0 auto;
+  a {
+    font-size: 1.2rem;
+  }
+  .prev {
+    float: left;
+  }
+  .next {
+    float: right;
+  }
 }
-
-.pagination .prev {
-  float: left;
-}
-
-.pagination .next {
-  float: right;
-}
-
-.pagination a {
-  font-size: 1.2rem;
-}
-
